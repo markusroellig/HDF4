@@ -1,0 +1,445 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     13950,        435]
+NotebookOptionsPosition[     10960,        340]
+NotebookOutlinePosition[     12626,        387]
+CellTagsIndexPosition[     12541,        382]
+WindowTitle->HDF4Import - Wolfram Mathematica
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[" ", "SymbolColorBar",
+ CellMargins->{{Inherited, Inherited}, {-5, 0}}],
+
+Cell[TextData[{
+ ButtonBox["Mathematica",
+  BaseStyle->{"Link", "LinkTrail"},
+  ButtonData->"paclet:HDF4/guide/HDF4"],
+ StyleBox[" > ", "LinkTrailSeparator"]
+}], "LinkTrail"],
+
+Cell[BoxData[GridBox[{
+   {Cell["HDF4 PACKAGE PACLET SYMBOL", "PacletNameCell"], Cell[TextData[Cell[
+    BoxData[
+     ActionMenuBox[
+      FrameBox["\<\"URL \[RightGuillemet]\"\>",
+       StripOnInput->False], {"\<\"HDF4/ref/HDF4Import\"\>":>
+      None, "\<\"Copy Mathematica url\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["HDF4/ref/HDF4Import"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web url\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/mathematica/HDF4/ref/HDF4Import.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+           False]]; SelectionMove[
+        DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web url\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+           "http://reference.wolfram.com/mathematica/", "HDF4/ref/HDF4Import",
+             ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["HDF4Import", "ObjectName",
+ CellID->1224892054],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"HDF4Import", "[", 
+       RowBox[{
+        StyleBox["file", "TI"], ",", 
+        StyleBox["element", "TI"]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]imports the wanted ",
+     Cell[BoxData[
+      StyleBox["element", "TI"]], "InlineFormula"],
+     " from the HDF4 ",
+     Cell[BoxData[
+      StyleBox["file", "TI"]], "InlineFormula"],
+     ". Possible elements ares \"Data\" and \"Datasets\". Currently ",
+     Cell[BoxData[
+      ButtonBox["HDF4Import",
+       BaseStyle->"Link",
+       ButtonData->"paclet:HDF4/ref/HDF4Import"]], "InlineFormula"],
+     " only supports Vdata sets."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["EXAMPLES",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->7330206],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection",
+ CellID->333606731],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<HDF4`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->354810986],
+
+Cell["\<\
+To test the Vdata import download the following file from the HDF Group \
+website:\
+\>", "ExampleText",
+ CellID->440513369],
+
+Cell["\<\
+http://www.hdfgroup.org/doc_resource/h4_doc/util/hdiff/hdifftst1.hdf\
+\>", "Input",
+ CellLabel->"In[2]:=",
+ CellID->345346268],
+
+Cell[TextData[{
+ Cell[BoxData["HDF4Import"], "InlineFormula"],
+ " accepts two elements for the import: \"Datasets\" and \"Data\". \"Datasets\
+\" lists the names of all Vdata sets in the file."
+}], "ExampleText",
+ CellID->417539605],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HDF4Import", "[", 
+  RowBox[{
+  "\"\<C:\\\\Users\\\\roellig\\\\Documents\\\\Projekte\\\\Mathematica\\\\HDF4\
+\\\\examples\\\\hdifftst1.hdf\>\"", ",", "\"\<Datasets\>\""}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->237057521],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"fakeDim0\"\>", ",", "\<\"fakeDim1\"\>", 
+   ",", "\<\"fakeDim2\"\>", ",", "\<\"fakeDim3\"\>", 
+   ",", "\<\"Valid_range\"\>", ",", "\<\"File_contents\"\>", 
+   ",", "\<\"vdata1\"\>", ",", "\<\"vdata2\"\>", ",", "\<\"vdata3\"\>"}], 
+  "}"}]], "Output",
+ ImageSize->{358, 33},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]=",
+ CellID->21470133]
+}, Open  ]],
+
+Cell["\"Data\" imports the actual data from the HDF4 file.", "ExampleText",
+ CellID->53816019],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HDF4Import", "[", 
+  RowBox[{
+  "\"\<C:\\\\Users\\\\roellig\\\\Documents\\\\Projekte\\\\Mathematica\\\\HDF4\
+\\\\examples\\\\hdifftst1.hdf\>\"", ",", "\"\<Data\>\""}], "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->600766799],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "0", ",", "65540", ",", "65560"}], "}"}], "}"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0", ",", "65540", ",", "65560"}], "}"}], "}"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "0", ",", "65540", ",", "65560"}], "}"}], "}"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0", ",", "65540", ",", "65560"}], "}"}], "}"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+       "1.`", ",", "1.`", ",", "0.`", ",", "1.8367659750983972`*^-40"}], 
+       "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+       "9.184250265031284`*^-41", ",", "3.6734198463196485`*^-40", ",", 
+        "9.184390394877716`*^-41", ",", "5.3133396934656`*^13"}], "}"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", "\<\"Storm_track_data1\.00\"\>", "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "\<\"V\"\>", "}"}], ",", 
+     RowBox[{"{", "\<\"D\"\>", "}"}], ",", 
+     RowBox[{"{", "\<\"A\"\>", "}"}], ",", 
+     RowBox[{"{", "\<\"T\"\>", "}"}], ",", 
+     RowBox[{"{", "\<\"A\"\>", "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+       "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", 
+        "8", ",", "0", ",", "131088", ",", "65560", ",", "1048576", ",", 
+        "262165", ",", "1299541108", ",", "1764582255", ",", "1836085102"}], 
+       "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+       "1701737504", ",", "1181312364", ",", "1677723254", ",", "1684108385", 
+        ",", "838863158", ",", "2016682049", ",", "1920098681", ",", "0", ",",
+         "196608", ",", "196608", ",", "4161536", ",", "4194304", ",", 
+        "4210688", ",", "4227072", ",", "4235264", ",", "4243456"}], "}"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "1.`", ",", "2.`", ",", "3.`", ",", "4.`", ",", "5.`", ",", "6.`", 
+         ",", "7.`", ",", "8.`", ",", "9.`", ",", "10.`", ",", "11.`", ",", 
+         "12.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "0.`", ",", "1.837046234791262`*^-40", ",", 
+         "2.7551349496629526`*^-40", ",", "4.591844872822777`*^-40"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "1.1020315590897518`*^-39", ",", "7.346839692639297`*^-40", ",", 
+         "1.1020483746713237`*^-39", ",", "2.7550788977243796`*^-40", ",", 
+         "1.8368220270369702`*^-40", ",", "1.6069272576`*^10", ",", 
+         "7.397859073501567`*^31", ",", "3.9510030591177515`*^-40"}], "}"}]}],
+       "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "1.925245678915025`*^31", ",", "3.94153426944`*^12", ",", 
+         "7.153814885690702`*^22", ",", "3.072715730311028`*^32", ",", 
+         "4.634120442163936`*^-35", ",", "7.136848120484146`*^31", ",", 
+         "6.421224407750966`*^-31", ",", "7.396372578313769`*^31", ",", 
+         "4.730250034017357`*^22", ",", "7.13053462628379`*^31", ",", 
+         "4.203895392974451`*^-45", ",", "4.203895392974451`*^-45"}], "}"}], 
+       ",", 
+       RowBox[{"{", "0.`", "}"}], ",", 
+       RowBox[{"{", "}"}]}], "}"}]}], "}"}]}], "}"}]], "Output",
+ ImageSize->{549, 253},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[4]=",
+ CellID->189917089]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["MORE ABOUT",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "MoreAboutSection",
+ CellID->38303248],
+
+Cell[TextData[{
+ Cell[BoxData["HDF4Import"], "InlineFormula"],
+ " ist still in a very experimental stage. It only imports Vdata sets \
+including accompanying annotations ( even though the annotation import has \
+not been tested thoroughly and might yield unexpected results."
+}], "MoreAbout",
+ CellID->1665078683],
+
+Cell["\<\
+Two different elements are supported so far: \"Data\" and \"Datasets\".\
+\>", "ExampleText",
+ CellID->469262793],
+
+Cell[BoxData[
+ RowBox[{Cell[BoxData[
+   ButtonBox["XXXX",
+    BaseStyle->"Link"]], "InlineFormula"], " ", 
+  StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"], " ", Cell[BoxData[
+   ButtonBox["XXXX",
+    BaseStyle->"Link"]], "InlineFormula"]}]], "SeeAlso",
+ CellID->309360380]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"HDF4Import - Wolfram Mathematica",
+TaggingRules->{
+ "ModificationHighlight" -> False, 
+  "Metadata" -> {
+   "built" -> "{2011, 10, 18, 11, 17, 53.9136558}", "context" -> "HDF4`", 
+    "keywords" -> {}, "index" -> True, "label" -> 
+    "HDF4 Package Paclet Symbol", "language" -> "en", "paclet" -> 
+    "HDF4 Package", "status" -> "None", "summary" -> 
+    "HDF4Import[file, element] imports the wanted element from the HDF4 file. \
+Possible elements ares \"Data\" and \"Datasets\". Currently HDF4Import only \
+supports Vdata sets.", "synonyms" -> {}, "title" -> "HDF4Import", "type" -> 
+    "Symbol", "uri" -> "HDF4/ref/HDF4Import"}, "LinkTrails" -> "", 
+  "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (February 23, 2011)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "8.0 for Microsoft Windows (64-bit) (February 23, 2011)",
+   StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[3664, 109, 459, 13, 70, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->7330206]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 12400, 375}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[603, 21, 76, 1, 70, "SymbolColorBar"],
+Cell[682, 24, 174, 5, 70, "LinkTrail"],
+Cell[859, 31, 1853, 42, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[2737, 77, 53, 1, 70, "ObjectName",
+ CellID->1224892054],
+Cell[2793, 80, 834, 24, 70, "Usage"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3664, 109, 459, 13, 70, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->7330206],
+Cell[CellGroupData[{
+Cell[4148, 126, 148, 5, 70, "ExampleSection",
+ CellID->333606731],
+Cell[4299, 133, 113, 3, 70, "Input",
+ CellID->354810986],
+Cell[4415, 138, 133, 4, 70, "ExampleText",
+ CellID->440513369],
+Cell[4551, 144, 136, 4, 70, "Input",
+ CellID->345346268],
+Cell[4690, 150, 231, 5, 70, "ExampleText",
+ CellID->417539605],
+Cell[CellGroupData[{
+Cell[4946, 159, 255, 6, 70, "Input",
+ CellID->237057521],
+Cell[5204, 167, 425, 11, 54, "Output",
+ CellID->21470133]
+}, Open  ]],
+Cell[5644, 181, 94, 1, 70, "ExampleText",
+ CellID->53816019],
+Cell[CellGroupData[{
+Cell[5763, 186, 251, 6, 70, "Input",
+ CellID->600766799],
+Cell[6017, 194, 3695, 100, 274, "Output",
+ CellID->189917089]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9773, 301, 419, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[10195, 315, 313, 6, 70, "MoreAbout",
+ CellID->1665078683],
+Cell[10511, 323, 122, 3, 70, "ExampleText",
+ CellID->469262793],
+Cell[10636, 328, 282, 7, 70, "SeeAlso",
+ CellID->309360380]
+}, Open  ]],
+Cell[10933, 338, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
