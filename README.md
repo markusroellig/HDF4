@@ -22,7 +22,7 @@ Needs["HDF4`"]
 HDF4Import[<insert file name>, "Datasets"]
 ```
 
-Here is an example HDF file with Vdata sets  (courtesy HDFGroup): hdifftst1.hdf
+Here is an example HDF file with Vdata sets  (courtesy HDFGroup): [hdifftst1.hdf[(https://github.com/markusroellig/HDF4/blob/main/hdiffst1.hdf)
 
 You can download the package her: HDFImport Mathematica Package
 
