@@ -22,11 +22,11 @@ Needs["HDF4`"]
 HDF4Import[<insert file name>, "Datasets"]
 ```
 
-Here is an example HDF file with Vdata sets  (courtesy HDFGroup): [hdifftst1.hdf[(https://github.com/markusroellig/HDF4/blob/main/hdiffst1.hdf)
+Here is an example HDF file with Vdata sets  (courtesy HDFGroup): [hdifftst1.hdf](https://github.com/markusroellig/HDF4/blob/main/hdiffst1.hdf)
 
 You can download the package her: HDFImport Mathematica Package
 
 I downloaded example hdf files and the corresponding content dumps from the HDFGroup website (Here is the link:http://www.hdfgroup.org/ftp/HDF/HDF_Current/src/unpacked/mfhdf/dumper/testfiles/)
-The contents of this directory as zip file can be donwloaded here : HDF4examples.zip
+The contents of this directory as zip file can be donwloaded here : [HDF4examples.zip](https://github.com/markusroellig/HDF4/blob/main/HDF4examples.zip)
 
 I also uploaded the Mathematica notebook that I used to figure out how the Vdata elements are composed and how to acces the relevant parts of the hdf file: HDF4.nb
